@@ -1,7 +1,7 @@
 import { VendureConfig } from "@vendure/core";
 import { getEnvs } from "../../getEnvs";
 
-const { SUPERADMIN_PASSWORD, SUPERADMIN_USERNAME, COOKIE_SECRET } = getEnvs();
+const { SUPERADMIN_PASSWORD, SUPERADMIN_USERNAME, COOKIE_SECRET, APP_ENV } = getEnvs();
 
 export const authOptions: VendureConfig["authOptions"] = {
   tokenMethod: ["bearer", "cookie"],
@@ -11,8 +11,11 @@ export const authOptions: VendureConfig["authOptions"] = {
   },
   cookieOptions: {
     secret: COOKIE_SECRET,
-    ...(process.env.APP_ENV === "dev"
-      ? {}
-      : { domain: ".aexol.com", sameSite: "lax" }),
+    domain: "gutricious.store",
+    sameSite: "none",
+    // secure: true,
+    secureProxy: true,
+    httpOnly: false,
+    // ...(APP_ENV !== "dev" && { domain: ".aexol.com", sameSite: "lax" }), // Use APP_ENV directly from destructured getEnvs()
   },
 };

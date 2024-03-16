@@ -3,6 +3,7 @@ import "dotenv/config";
 const envs = [
   "API_URL",
   "STOREFRONT_URL",
+  "APP_ENV",
   "COOKIE_SECRET",
   "SUPERADMIN_USERNAME",
   "SUPERADMIN_PASSWORD",

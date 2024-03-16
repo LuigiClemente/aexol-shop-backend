@@ -16,6 +16,9 @@
     "stripe": "stripe listen --forward-to localhost:3000/payments/stripe"
   },
   "dependencies": {
+    "@pinelab/vendure-plugin-customer-managed-groups": "^1.1.0",
+    "@pinelab/vendure-plugin-stripe-subscription": "^2.2.1",
+    "@pinelab/vendure-plugin-webhook": "^1.1.1",
     "@aws-sdk/client-s3": "^3.478.0",
     "@aws-sdk/lib-storage": "^3.478.0",
     "@vendure/admin-ui-plugin": "2.1.4",
@@ -25,12 +28,14 @@
     "@vendure/email-plugin": "2.1.4",
     "@vendure/payments-plugin": "^2.1.5",
     "@vendure/ui-devkit": "^2.1.5",
-    "dotenv": "16.3.1",
+    "dotenv": "^16.3.1",
     "pg": "8.11.3",
     "stripe": "^13.11.0",
+    "axios": "^1.6.2",
     "typescript": "4.9.5"
   },
   "devDependencies": {
+    "@vendure/ui-devkit": "^2.1.5",
     "concurrently": "8.2.2",
     "ts-node": "10.9.2"
   }
